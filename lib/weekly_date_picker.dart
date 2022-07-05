@@ -13,7 +13,7 @@ class WeeklyDatePicker extends StatefulWidget {
     this.weekdays = const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     this.backgroundColor = const Color(0xFFFAFAFA),
     this.selectedBackgroundColor = const Color(0xFF2A2859),
-    this.selectedDigitColor = const Color(0xFF2A2859),
+    this.selectedDigitColor = const Color(0xFFFFFFFF),
     this.digitsColor = const Color(0xFF000000),
     this.weekdayTextColor = const Color(0xFF000000),
     this.enableWeeknumberText = false,
@@ -182,12 +182,14 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   decoration: BoxDecoration(
                     // Border around today's date
                     color: dateTime.isSameDateAs(_todaysDateTime)
-                        ? widget.selectedBackgroundColor
-                        : Colors.transparent,
+                        ? widget.selectedDigitColor
+                        : widget.backgroundColor,
                     shape: BoxShape.circle,
                   ),
                   child: CircleAvatar(
-                    backgroundColor: widget.backgroundColor,
+                    backgroundColor: isSelected
+                        ? widget.selectedBackgroundColor
+                        : widget.backgroundColor,
                     radius: 14.0,
                     child: Text(
                       '${dateTime.day}',
