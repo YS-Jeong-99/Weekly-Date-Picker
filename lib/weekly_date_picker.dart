@@ -12,7 +12,7 @@ class WeeklyDatePicker extends StatefulWidget {
     this.weekdayText = 'Week',
     this.weekdays = const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     this.backgroundColor = const Color(0xFFFAFAFA),
-    this.selectedBackgroundColor = Colors.amberAccent,
+    this.selectedBackgroundColor = const Color(0xFF2A2859),
     this.selectedDigitColor = const Color(0xFFFFFFFF),
     this.digitsColor = const Color(0xFF000000),
     this.weekdayTextColor = const Color(0xFF303030),
