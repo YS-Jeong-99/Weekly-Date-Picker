@@ -155,6 +155,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
         child: Container(
           // Bugfix, the transparent container makes the GestureDetector fill the Expanded
           color: Colors.red,
+          padding: EdgeInsets.all(4.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
