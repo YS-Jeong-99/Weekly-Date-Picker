@@ -187,9 +187,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                     shape: BoxShape.circle,
                   ),
                   child: CircleAvatar(
-                    backgroundColor: isSelected
-                        ? widget.selectedBackgroundColor
-                        : widget.backgroundColor,
+                    backgroundColor: widget.backgroundColor,
                     radius: 14.0,
                     child: Text(
                       '${dateTime.day}',
