@@ -178,7 +178,6 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(1.0),
                   decoration: BoxDecoration(
                     // Border around today's date
                     border: Border.all(
