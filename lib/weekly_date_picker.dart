@@ -153,7 +153,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
       child: GestureDetector(
         onTap: () => widget.changeDay(dateTime),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Container(
             // Bugfix, the transparent container makes the GestureDetector fill the Expanded
             decoration: BoxDecoration(
@@ -184,7 +184,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   decoration: BoxDecoration(
                     // Border around today's date
                     border: Border.all(
-                      width: 1.0,
+                      width: 2.0,
                       color: dateTime.isSameDateAs(_todaysDateTime)
                           ? widget.selectedBackgroundColor
                           : Colors.transparent,
