@@ -178,8 +178,8 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   ),
                 ),
                 Container(
-                  width: 12.0,
-                  height: 12.0,
+                  width: 20.0,
+                  height: 20.0,
                   decoration: BoxDecoration(
                     // Border around today's date
                     border: Border.all(
