@@ -162,8 +162,12 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                 padding: EdgeInsets.only(bottom: 4.0),
                 child: Text(
                   '$weekday',
-                  style:
-                      TextStyle(fontSize: 12.0, color: widget.weekdayTextColor),
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    color: isSelected
+                        ? widget.selectedBackgroundColor
+                        : widget.backgroundColor,
+                  ),
                 ),
               ),
               Container(
