@@ -190,10 +190,11 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                     child: Text(
                       '${dateTime.day}',
                       style: TextStyle(
-                          fontSize: 16.0,
-                          color: isSelected
-                              ? Colors.transparent
-                              : widget.digitsColor),
+                        fontSize: 16.0,
+                        color: isSelected
+                            ? widget.selectedDigitColor
+                            : Colors.transparent,
+                      ),
                     ),
                   ),
                 ),
