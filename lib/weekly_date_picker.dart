@@ -182,8 +182,8 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   decoration: BoxDecoration(
                     // Border around today's date
                     color: dateTime.isSameDateAs(_todaysDateTime)
-                        ? widget.selectedDigitColor
-                        : widget.backgroundColor,
+                        ? widget.selectedBackgroundColor
+                        : Colors.transparent,
                     shape: BoxShape.circle,
                   ),
                   child: CircleAvatar(
