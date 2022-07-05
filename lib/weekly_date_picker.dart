@@ -154,7 +154,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
         onTap: () => widget.changeDay(dateTime),
         child: Container(
           // Bugfix, the transparent container makes the GestureDetector fill the Expanded
-          color: Colors.transparent,
+          color: Colors.red,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -166,18 +166,19 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                     fontSize: 12.0,
                     color: isSelected
                         ? widget.selectedBackgroundColor
-                        : widget.weekdayTextColor,
+                        : widget.backgroundColor,
                   ),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.all(1.0),
                 decoration: BoxDecoration(
-                    // Border around today's date
-                    color: dateTime.isSameDateAs(_todaysDateTime)
-                        ? widget.selectedBackgroundColor
-                        : Colors.transparent,
-                    shape: BoxShape.circle),
+                  // Border around today's date
+                  color: dateTime.isSameDateAs(_todaysDateTime)
+                      ? widget.selectedBackgroundColor
+                      : Colors.transparent,
+                  shape: BoxShape.circle,
+                ),
                 child: CircleAvatar(
                   backgroundColor: isSelected
                       ? widget.selectedBackgroundColor
