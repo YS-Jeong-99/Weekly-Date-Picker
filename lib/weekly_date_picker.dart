@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:week_of_year/week_of_year.dart';
 import "package:weekly_date_picker/datetime_apis.dart";
 
+enum FWFontWeight { bold, normal, thin }
+
 class WeeklyDatePicker extends StatefulWidget {
   WeeklyDatePicker({
     Key? key,
     required this.selectedDay,
     required this.changeDay,
     this.weekdayText = 'Week',
-    this.weekdays = const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    this.weekdays = const ['월', '화', '수', '목', '금', '토', '일'],
     this.backgroundColor = const Color(0xFFFAFAFA),
     this.selectedBackgroundColor = const Color(0xFF2A2859),
     this.selectedDigitColor = const Color(0xFF2A2859),
@@ -20,6 +22,12 @@ class WeeklyDatePicker extends StatefulWidget {
     this.weeknumberColor = const Color(0xFFB2F5FE),
     this.weeknumberTextColor = const Color(0xFF000000),
     this.daysInWeek = 7,
+    this.textStyle = const TextStyle(
+      fontFamily: 'Noto_Sans_KR',
+      fontWeight: FontWeight.w500,
+      fontSize: 14.0,
+      height: 20 / 14,
+    ),
   })  : assert(weekdays.length == daysInWeek,
             "weekdays must be of length $daysInWeek"),
         super(key: key);
@@ -63,6 +71,8 @@ class WeeklyDatePicker extends StatefulWidget {
   /// Specifies the number of weekdays to render, default is 7, so Monday to Sunday
   final int daysInWeek;
 
+  final TextStyle textStyle;
+
   @override
   _WeeklyDatePickerState createState() => _WeeklyDatePickerState();
 }
@@ -104,7 +114,8 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   color: widget.weeknumberColor,
                   child: Text(
                     '${widget.weekdayText} $_weeknumberInSwipe',
-                    style: TextStyle(color: widget.weeknumberTextColor),
+                    style: widget.textStyle
+                        .apply(color: widget.weeknumberTextColor),
                   ),
                 )
               : Container(),
@@ -169,8 +180,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   padding: EdgeInsets.only(bottom: 4.0),
                   child: Text(
                     '$weekday',
-                    style: TextStyle(
-                      fontSize: 12.0,
+                    style: widget.textStyle.apply(
                       color: isSelected
                           ? Color(0xFFFAFAFA)
                           : widget.weekdayTextColor,
@@ -191,8 +201,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                     radius: 14.0,
                     child: Text(
                       '${dateTime.day}',
-                      style: TextStyle(
-                          fontSize: 16.0,
+                      style: widget.textStyle.apply(
                           color: isSelected
                               ? widget.selectedDigitColor
                               : widget.digitsColor),
