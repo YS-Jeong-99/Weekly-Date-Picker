@@ -173,7 +173,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                       fontSize: 12.0,
                       color: isSelected
                           ? Colors.transparent
-                          : widget.backgroundColor,
+                          : widget.weekdayTextColor,
                     ),
                   ),
                 ),
@@ -189,7 +189,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   child: CircleAvatar(
                     backgroundColor: isSelected
                         ? widget.selectedBackgroundColor
-                        : widget.weekdayTextColor,
+                        : Colors.transparent,
                     radius: 14.0,
                     child: Text(
                       '${dateTime.day}',
