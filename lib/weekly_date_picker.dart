@@ -13,7 +13,7 @@ class WeeklyDatePicker extends StatefulWidget {
     this.weekdays = const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     this.backgroundColor = const Color(0xFFFAFAFA),
     this.selectedBackgroundColor = const Color(0xFF2A2859),
-    this.selectedDigitColor = const Color(0xFFFFFFFF),
+    this.selectedDigitColor = const Color(0xFF2A2859),
     this.digitsColor = const Color(0xFF000000),
     this.weekdayTextColor = const Color(0xFF000000),
     this.enableWeeknumberText = false,
@@ -153,7 +153,7 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
       child: GestureDetector(
         onTap: () => widget.changeDay(dateTime),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Container(
             // Bugfix, the transparent container makes the GestureDetector fill the Expanded
             decoration: BoxDecoration(
@@ -178,28 +178,25 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   ),
                 ),
                 Container(
-                  width: 20.0,
-                  height: 20.0,
-                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(1.0),
                   decoration: BoxDecoration(
                     // Border around today's date
-                    border: Border.all(
-                      width: 2.0,
-                      color: dateTime.isSameDateAs(_todaysDateTime)
-                          ? widget.selectedBackgroundColor
-                          : Colors.transparent,
-                    ),
+                    color: dateTime.isSameDateAs(_todaysDateTime)
+                        ? widget.selectedBackgroundColor
+                        : Colors.transparent,
                     shape: BoxShape.circle,
                   ),
-                  child: Text(
-                    '${dateTime.day}',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: isSelected
-                          ? widget.selectedDigitColor
-                          : widget.digitsColor,
+                  child: CircleAvatar(
+                    backgroundColor: widget.backgroundColor,
+                    radius: 14.0,
+                    child: Text(
+                      '${dateTime.day}',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          color: isSelected
+                              ? widget.selectedDigitColor
+                              : widget.digitsColor),
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
