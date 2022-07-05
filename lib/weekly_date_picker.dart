@@ -178,17 +178,18 @@ class _WeeklyDatePickerState extends State<WeeklyDatePicker> {
                   ),
                 ),
                 Container(
-                  color: Colors.red,
-                  // decoration: BoxDecoration(
-                  //   // Border around today's date
-                  //   border: Border.all(
-                  //     width: 1.0,
-                  //     color: dateTime.isSameDateAs(_todaysDateTime)
-                  //         ? widget.selectedBackgroundColor
-                  //         : Colors.transparent,
-                  //   ),
-                  //   shape: BoxShape.circle,
-                  // ),
+                  width: 12.0,
+                  height: 12.0,
+                  decoration: BoxDecoration(
+                    // Border around today's date
+                    border: Border.all(
+                      width: 1.0,
+                      color: dateTime.isSameDateAs(_todaysDateTime)
+                          ? widget.selectedBackgroundColor
+                          : Colors.transparent,
+                    ),
+                    shape: BoxShape.circle,
+                  ),
                   child: Text(
                     '${dateTime.day}',
                     style: TextStyle(
